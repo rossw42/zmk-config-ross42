@@ -62,24 +62,24 @@ include:
 #   shield: corne_right
 
 # # Cradio - Using generic_3x6
-# HyperGolic
-- board: nice_nano_v2
-  shield: cradio_left
-- board: nice_nano_v2
-  shield: cradio_right
+# - board: nice_nano_v2
+#   shield: cradio_left
+# - board: nice_nano_v2
+#   shield: cradio_right
 
 # # Cradio36 - Using generic_3x6
-- board: nice_nano_v2
-  shield: cradio36_left 
-- board: nice_nano_v2
-  shield: cradio36_right
+# - board: nice_nano_v2
+#   shield: cradio36_left 
+# - board: nice_nano_v2
+#   shield: cradio36_right
 
 
 # # Cradios - Using generic_3x6 (no outer columns, no Studio support)
-# - board: nice_nano_v2
-#   shield: cradios_left
-# - board: nice_nano_v2
-#   shield: cradios_right
+# HyperGolic
+- board: nice_nano_v2
+  shield: cradios_left
+- board: nice_nano_v2
+  shield: cradios_right
 
 # - board: nice_nano_v2
 #   shield: settings_reset
