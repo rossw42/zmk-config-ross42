@@ -2,7 +2,7 @@
  * Cradio36 Keymap - CUSTOM (Not using generic system)
  * 
  * This is a 3x5 + 3 thumbs layout with hardcoded bindings.
- * Layout: 3x5 alpha + 3 thumbs = 36 keys
+ * Layout: 3x5 alpha + 2 thumbs 
  * 
  * To convert to generic system, replace bindings with:
  * #include "generic_3x5_layers.dtsi" (or create a 3x5+3thumb variant)

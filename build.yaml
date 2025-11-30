@@ -64,8 +64,8 @@ include:
 
 # # Cradio36 - Using generic_3x6
 # HyperGolic
-- board: nice_nano_v2
-  shield: cradio36_left
+# - board: nice_nano_v2
+#   shield: cradio36_left
 - board: nice_nano_v2
   shield: cradio36_right
 
@@ -75,5 +75,5 @@ include:
 # - board: nice_nano_v2
 #   shield: cradios_right
 
-- board: nice_nano_v2
-  shield: settings_reset
+# - board: nice_nano_v2
+#   shield: settings_reset
