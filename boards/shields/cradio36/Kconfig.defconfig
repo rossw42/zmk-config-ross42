@@ -2,7 +2,7 @@
 if SHIELD_CRADIO36_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "Cradio36"
+	default "HyperGolic"
 
 endif
 
@@ -10,7 +10,7 @@ endif
 if SHIELD_CRADIO36_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "Cradio36-Right"
+	default "HyperGolic-Right"
 
 endif
 

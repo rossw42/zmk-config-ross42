@@ -14,6 +14,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+// Include the shared behaviors and macros FIRST
+#include "generic_3x5_behaviors.dtsi"
+
+// Include the shared layer definitions
+#include "generic_3x5_layers.dtsi"
+
 / {
     behaviors {
         esc_q: escape_q {
