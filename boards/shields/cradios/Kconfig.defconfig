@@ -2,7 +2,7 @@
 if SHIELD_CRADIOS_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "Cradio"
+	default "Hypergolic"
 
 endif
 
@@ -10,7 +10,7 @@ endif
 if SHIELD_CRADIOS_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "CRADIOS_Right"
+	default "Hypergolic_Right"
 
 endif
 
