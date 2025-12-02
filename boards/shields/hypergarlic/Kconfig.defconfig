@@ -1,7 +1,7 @@
 config ZMK_SPLIT
     default y
 
-if SHIELD_HYPERGARLIC_LEFT
+if SHIELD_hypergarlic_LEFT
 	config ZMK_SPLIT_ROLE_CENTRAL
 		default y
 	config ZMK_KEYBOARD_NAME
@@ -10,12 +10,13 @@ if SHIELD_HYPERGARLIC_LEFT
 endif
 
 
-if SHIELD_HYPERGARLIC_RIGHT
-
+if SHIELD_hypergarlic_RIGHT
+	config ZMK_SPLIT_ROLE_CENTRAL
+		default n
 	config ZMK_KEYBOARD_NAME
-		default "HYPERGARLIC_right"
+		default "Hyper Garlic Right"
 
-	endif
+endif
 
 config ZMK_KSCAN_DIRECT_POLLING
 	default n
