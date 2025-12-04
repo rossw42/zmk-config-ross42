@@ -20,3 +20,8 @@
 &default_transform {
     col-offset = <0>;
 };
+
+// Map the 6 physical columns to the 10-column transform
+// Physical COL0 (outer) is not used in keymap
+// Physical COL1-5 map to transform columns 1-5
+// Physical COL0-5 on right map to transform columns 6-10 (with col-offset)
