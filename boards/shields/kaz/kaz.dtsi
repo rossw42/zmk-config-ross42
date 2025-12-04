@@ -5,7 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "kaz-layout.dtsi"
+#include "kaz-layouts.dtsi"
 
 / {
     chosen {
