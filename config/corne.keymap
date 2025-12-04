@@ -1,5 +1,5 @@
 /*
- * Corne Keymap - Using Generic 3x6 Layout
+ * Corne Keymap - Using Generic 3x5 Layout with 3 thumb keys
  * 
  * This keymap automatically uses the shared generic_3x5_layers.dtsi
  */
@@ -13,7 +13,7 @@
 // Include the shared behaviors and macros FIRST
 #include "generic_3x5_behaviors.dtsi"
 
-// Include the shared layer definitions (3x6 for Corne)
+// Include the shared layer definitions (3x5 for Kaz)
 #include "generic_3x5_layers.dtsi"
 
 

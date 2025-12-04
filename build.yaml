@@ -54,13 +54,13 @@ include:
 # - board: nice_nano_v2
 #   shield: hypergarlic_right
 
-# # Kaz - Using generic_3x5
+# # Kaz - Using generic_3x5 with custom shield
 - board: nice_nano_v2
-  shield: corne_left
+  shield: kaz_left
   snippet: studio-rpc-usb-uart
   cmake-args: -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano_v2
-  shield: corne_right
+  shield: kaz_right
 
 # # Cradio - Using generic_3x6
 # - board: nice_nano_v2
