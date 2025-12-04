@@ -48,18 +48,19 @@ include:
 #   shield: a_dux_right
 
 # # HyperGarlic - Using generic_3x5 (no Studio support in shield)
-- board: nice_nano_v2
-  shield: hypergarlic_left
-- board: nice_nano_v2
-  shield: hypergarlic_right
+# May not work wired
+# - board: nice_nano_v2
+#   shield: hypergarlic_left
+# - board: nice_nano_v2
+#   shield: hypergarlic_right
 
 # # Kaz - Using generic_3x5
-# - board: nice_nano_v2
-#   shield: corne_left
-#   snippet: studio-rpc-usb-uart
-#   cmake-args: -DCONFIG_ZMK_STUDIO=y
-# - board: nice_nano_v2
-#   shield: corne_right
+- board: nice_nano_v2
+  shield: corne_left
+  snippet: studio-rpc-usb-uart
+  cmake-args: -DCONFIG_ZMK_STUDIO=y
+- board: nice_nano_v2
+  shield: corne_right
 
 # # Cradio - Using generic_3x6
 # - board: nice_nano_v2
@@ -73,7 +74,6 @@ include:
 # - board: nice_nano_v2
 #   shield: cradio36_right
 
-
 # # Cradios - Using generic_3x6 (no outer columns, no Studio support)
 # HyperGolic
 # - board: nice_nano_v2
@@ -81,5 +81,5 @@ include:
 # - board: nice_nano_v2
 #   shield: cradios_right
 
-- board: nice_nano_v2
-  shield: settings_reset
+# - board: nice_nano_v2
+#   shield: settings_reset
