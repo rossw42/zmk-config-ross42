@@ -1,0 +1,15 @@
+file_format: "1"
+id: kaz
+name: Kaz
+type: keyboard
+url: https://github.com/zmkfirmware/zmk
+manufacturer: Unknown
+product_name: Kaz
+maintainer: Unknown
+features:
+  - keys
+  - underglow
+split: true
+siblings:
+  - kaz_left
+  - kaz_right
