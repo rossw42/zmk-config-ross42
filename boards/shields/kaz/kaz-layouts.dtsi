@@ -8,10 +8,9 @@
 #include <physical_layouts.dtsi>
 
 / {
-    kaz_layout: kaz_layout {
+    physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Kaz";
-        transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             // Row 0 - Left side (6 keys including outer column)
