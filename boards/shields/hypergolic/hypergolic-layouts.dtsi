@@ -11,9 +11,6 @@
         compatible = "zmk,physical-layout";
         display-name = "HyperGolic";
 
-        kscan = <&kscan0>;
-        transform = <&default_transform>;
-
         keys  //                     w   h    x    y     rot    rx    ry
             // Row 0 - Left half (Q W E R T)
             = <&key_physical_attrs 100 100    0  133       0     0     0>
