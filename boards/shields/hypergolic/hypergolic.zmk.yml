@@ -1,0 +1,11 @@
+file_format: "1"
+id: hypergolic
+name: HyperGolic
+type: shield
+requires: [pro_micro]
+features:
+  - keys
+  - studio
+siblings:
+  - hypergolic_left
+  - hypergolic_right
