@@ -79,11 +79,11 @@ include:
 #   shield: cradios_right
 
 # HyperGolic - Wired split with ZMK Studio support
-  - board: nice_nano_v2
+  - board: nice_nano/v2
     shield: hypergolic_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano_v2
+  - board: nice_nano/v2
     shield: hypergolic_right
 
 # - board: nice_nano_v2
