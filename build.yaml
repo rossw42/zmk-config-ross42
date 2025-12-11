@@ -78,11 +78,9 @@ include:
 # - board: nice_nano_v2
 #   shield: cradios_right
 
-# HyperGolic - Wired split with ZMK Studio support
+# HyperGolic - Bluetooth split keyboard
   - board: nice_nano/nrf52840
     shield: hypergolic_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano/nrf52840
     shield: hypergolic_right
 
