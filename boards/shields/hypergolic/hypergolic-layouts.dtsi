@@ -15,50 +15,48 @@
         transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
-            // Left half - matches keymap positions 0-16
-            // Row 0 (Q W E R T) - positions 0-4
-            = <&key_physical_attrs 100 100    0   91       0     0     0>
+            // Row 0 - Left half (Q W E R T)
+            = <&key_physical_attrs 100 100    0  133       0     0     0>
             , <&key_physical_attrs 100 100  100   31       0     0     0>
             , <&key_physical_attrs 100 100  200    0       0     0     0>
             , <&key_physical_attrs 100 100  300   28       0     0     0>
             , <&key_physical_attrs 100 100  400   42       0     0     0>
-            // Row 1 (A S D F G) - positions 5-9
-            , <&key_physical_attrs 100 100    0  191       0     0     0>
+            // Row 0 - Right half (Y U I O P)
+            , <&key_physical_attrs 100 100  800   42       0     0     0>
+            , <&key_physical_attrs 100 100  900   28       0     0     0>
+            , <&key_physical_attrs 100 100 1000    0       0     0     0>
+            , <&key_physical_attrs 100 100 1100   31       0     0     0>
+            , <&key_physical_attrs 100 100 1200  133       0     0     0>
+            // Row 1 - Left half (A S D F G)
+            , <&key_physical_attrs 100 100    0  233       0     0     0>
             , <&key_physical_attrs 100 100  100  131       0     0     0>
             , <&key_physical_attrs 100 100  200  100       0     0     0>
             , <&key_physical_attrs 100 100  300  128       0     0     0>
             , <&key_physical_attrs 100 100  400  142       0     0     0>
-            // Row 2 (Z X C V B) - positions 10-14
-            , <&key_physical_attrs 100 100    0  291       0     0     0>
+            // Row 1 - Right half (H J K L ;)
+            , <&key_physical_attrs 100 100  800  142       0     0     0>
+            , <&key_physical_attrs 100 100  900  128       0     0     0>
+            , <&key_physical_attrs 100 100 1000  100       0     0     0>
+            , <&key_physical_attrs 100 100 1100  131       0     0     0>
+            , <&key_physical_attrs 100 100 1200  233       0     0     0>
+            // Row 2 - Left half (Z X C V B)
+            , <&key_physical_attrs 100 100    0  333       0     0     0>
             , <&key_physical_attrs 100 100  100  231       0     0     0>
             , <&key_physical_attrs 100 100  200  200       0     0     0>
             , <&key_physical_attrs 100 100  300  228       0     0     0>
             , <&key_physical_attrs 100 100  400  242       0     0     0>
-            // Thumb keys (TAB RET) - positions 15-16
-            , <&key_physical_attrs 100 100  300  342       0     0     0>
-            , <&key_physical_attrs 100 100  400  342       0     0     0>
-            // Right half - matches keymap positions 17-33
-            // Row 0 (Y U I O P) - positions 17-21
-            , <&key_physical_attrs 100 100  700   42       0     0     0>
-            , <&key_physical_attrs 100 100  800   28       0     0     0>
-            , <&key_physical_attrs 100 100  900    0       0     0     0>
-            , <&key_physical_attrs 100 100 1000   31       0     0     0>
-            , <&key_physical_attrs 100 100 1100   91       0     0     0>
-            // Row 1 (H J K L ;) - positions 22-26
-            , <&key_physical_attrs 100 100  700  142       0     0     0>
-            , <&key_physical_attrs 100 100  800  128       0     0     0>
-            , <&key_physical_attrs 100 100  900  100       0     0     0>
-            , <&key_physical_attrs 100 100 1000  131       0     0     0>
-            , <&key_physical_attrs 100 100 1100  191       0     0     0>
-            // Row 2 (N M , . /) - positions 27-31
-            , <&key_physical_attrs 100 100  700  242       0     0     0>
-            , <&key_physical_attrs 100 100  800  228       0     0     0>
-            , <&key_physical_attrs 100 100  900  200       0     0     0>
-            , <&key_physical_attrs 100 100 1000  231       0     0     0>
-            , <&key_physical_attrs 100 100 1100  291       0     0     0>
-            // Thumb keys (SPC BSPC) - positions 32-33
-            , <&key_physical_attrs 100 100  700  342       0     0     0>
-            , <&key_physical_attrs 100 100  800  342       0     0     0>
+            // Row 2 - Right half (N M , . /)
+            , <&key_physical_attrs 100 100  800  242       0     0     0>
+            , <&key_physical_attrs 100 100  900  228       0     0     0>
+            , <&key_physical_attrs 100 100 1000  200       0     0     0>
+            , <&key_physical_attrs 100 100 1100  231       0     0     0>
+            , <&key_physical_attrs 100 100 1200  333       0     0     0>
+            // Thumb keys - Left (TAB RET)
+            , <&key_physical_attrs 100 100  400  375       0     0     0>
+            , <&key_physical_attrs 100 100  500  400       0     0     0>
+            // Thumb keys - Right (SPC BSPC)
+            , <&key_physical_attrs 100 100  700  400       0     0     0>
+            , <&key_physical_attrs 100 100  800  375       0     0     0>
             ;
     };
 };
