@@ -31,12 +31,12 @@ include:
 #   shield: generic_3x6_right
 
 # Hillside 48 - Using generic_3x6 + extras
-# - board: nice_nano/nrf52840
-#   shield: hillside48_left
-#   snippet: studio-rpc-usb-uart
-#   cmake-args: -DCONFIG_ZMK_STUDIO=y
-# - board: nice_nano/nrf52840
-#   shield: hillside48_right
+- board: nice_nano/nrf52840
+  shield: hillside48_left
+  snippet: studio-rpc-usb-uart
+  cmake-args: -DCONFIG_ZMK_STUDIO=y
+- board: nice_nano/nrf52840
+  shield: hillside48_right
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
@@ -49,10 +49,10 @@ include:
 
 # # HyperGarlic - Using generic_3x5 (no Studio support in shield)
 # May not work wired
-- board: nice_nano/nrf52840
-  shield: hypergarlic_left
-- board: nice_nano/nrf52840
-  shield: hypergarlic_right
+# - board: nice_nano/nrf52840
+#   shield: hypergarlic_left
+# - board: nice_nano/nrf52840
+#   shield: hypergarlic_right
 
 # # Kaz - Using generic_3x5 with custom shield (wired split)
 # - board: nice_nano/nrf52840
