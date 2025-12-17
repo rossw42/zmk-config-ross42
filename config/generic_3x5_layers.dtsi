@@ -13,28 +13,28 @@
 
 // Base Layer - QWERTY with hold-tap on Q (Esc) and P (Backspace)
 #define BASE_LAYER \
-&esc_q ESC Q  &kp W        &kp E        &kp R         &kp T                                           &kp Y       &kp U         &kp I        &kp O        &bspc_p BSPC P  \
-&lmt LCTRL A  &lmt LALT S  &lmt LGUI D  &lst LSHFT F  &kp G                                           &kp H       &rst RSHFT J  &rmt RGUI K  &rmt RALT L  &rmt RCTRL SEMI  \
-&kp Z         &kp X        &kp C        &kp V         &kp B                                           &kp N       &kp M         &kp COMMA    &kp DOT      &kp SLASH  \
-&lt 2 TAB  &mt RSHFT SPACE    &mt LC(LALT) RET      &lt 1 BSPC
+&esc_q ESC Q  &kp W        &kp E        &kp R         &kp T              &kp Y             &kp U         &kp I        &kp O        &bspc_p BSPC P  \
+&lmt LCTRL A  &lmt LALT S  &lmt LGUI D  &lst LSHFT F  &kp G              &kp H             &rst RSHFT J  &rmt RGUI K  &rmt RALT L  &rmt RCTRL SEMI  \
+&kp Z         &kp X        &kp C        &kp V         &kp B              &kp N             &kp M         &kp COMMA    &kp DOT      &kp SLASH  \
+&lt 1 TAB     &mt RSHFT SPACE    &mt LC(LALT) RET  &lt 2 BSPC
 
 // Numbers Layer - Numbers, F-keys, Navigation
 #define NUM_LAYER \
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5                       &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  \
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5                       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp TAB  \
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10                      &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL  \
-&trans   &kp F11    &kp F12  &trans
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  \
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp TAB  \
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL  \
+&trans  &kp F11    &kp F12   &trans
 
 // Symbols Layer - All symbols and brackets
 #define SYM_LAYER \
-&kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  \
-&kp GRAVE  &kp TILDE  &kp SQT   &kp DQT   &trans                        &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  \
-&trans     &trans     &trans    &trans    &trans                        &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  \
-&trans     &kp ESC    &trans  &trans
+&kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  \
+&kp GRAVE  &kp TILDE  &kp SQT   &kp DQT   &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  \
+&trans     &trans     &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  \
+&trans    &kp ESC      &trans     &trans
 
 // Function Layer - Bluetooth, system controls, media
 #define FNC_LAYER \
-&sys_reset   &trans  &trans  &out OUT_BLE  &bt BT_SEL 0    &trans      &trans    &trans      &trans      &trans  \
-&bootloader  &trans  &trans  &out OUT_USB  &bt BT_SEL 1    &trans      &trans    &trans      &trans      &bootloader  \
-&trans       &trans  &trans  &bt BT_CLR    &bt BT_SEL 2    &kp C_MUTE  &kp C_PP  &kp C_PREV  &kp C_NEXT  &trans  \
-&trans        &trans    &trans  &trans
+&trans       &trans  &trans  &out OUT_BLE  &bt BT_SEL 0    &trans      &trans  &trans  &trans  &trans  \
+&bootloader  &trans  &trans  &out OUT_USB  &bt BT_SEL 1    &trans      &trans  &trans  &trans  &trans  \
+&trans       &trans  &trans  &bt BT_CLR    &bt BT_SEL 2    &kp C_MUTE  &trans  &trans  &trans  &trans  \
+&trans        &trans          &trans      &trans
