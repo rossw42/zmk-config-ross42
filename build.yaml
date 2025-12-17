@@ -38,6 +38,13 @@ include:
 - board: nice_nano/nrf52840
   shield: hillside48_right
 
+  # Hillside 48
+#   Comment out below if you do not have this board, to save build time
+  # - board: nice_nano_v2
+  #   shield: hillside48_left
+  # - board: nice_nano_v2
+  #   shield: hillside48_right
+
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
 # - board: nice_nano/nrf52840

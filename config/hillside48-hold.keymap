@@ -1,0 +1,118 @@
+/*
+ * Hillside48 Keymap - Using Generic 3x6 Layout + Extras
+ * 
+ * Core 3x6 + 3 thumbs syncs from generic system
+ * Extra keys: outer column + 4th thumb per side
+ * 
+ * Layout: 3x6 + 2 extra row keys + 4 thumbs = 48 keys
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// Include the shared layer definitions FIRST
+
+#include "generic_3x6_layers.dtsi"
+
+#define Undo   LC(Z)
+#define Cut    LC(X)
+#define Copy   LC(C)
+#define Paste  LC(V)
+
+/ {
+    behaviors {
+        esc_q: escape_q {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        bspc_p: backspace_p {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_unlock {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&studio_unlock>;
+            layers = <0>;
+        };
+
+        combo_adj {
+            timeout-ms = <200>;
+            key-positions = <36 41>;
+            bindings = <&mo 3>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Base";
+
+            // Core matches generic_3x6, with extra keys added
+
+            bindings = <
+&kp TAB    &esc_q ESC Q  &kp W  &kp E  &kp R  &kp T                                          &kp Y  &kp U     &kp I      &kp O    &bspc_p BSPC P  &kp BSPC
+&kp LCTRL  &kp A         &kp S  &kp D  &kp F  &kp G                                          &kp H  &kp J     &kp K      &kp L    &kp SEMI        &kp SQT
+&kp LSHFT  &kp Z         &kp X  &kp C  &kp V  &kp B  &kp A                          &kp ESC  &kp N  &kp M     &kp COMMA  &kp DOT  &kp SLASH       &kp RSHFT
+                        &mo 3  &mo 1  &kp RET  &kp ESC  &trans    &trans  &mo 2  &kp SPACE  &mo 3  &kp LGUI
+            >;
+        };
+
+        num_layer {
+            display-name = "Numbers";
+
+            // Core matches generic_3x6, with extra keys
+
+            bindings = <
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                          &kp N6    &kp N7     &kp N8     &kp N9     &kp N0   &kp DEL
+&kp F11  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                          &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp TAB  &kp TAB
+&kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp INS                    &kp C_MUTE  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL  &kp INS
+                        &trans  &trans  &trans   &trans   &trans    &trans  &trans  &trans      &trans    &trans
+            >;
+        };
+
+        sym_layer {
+            display-name = "Symbols";
+
+            // Core matches generic_3x6, with extra keys
+
+            bindings = <
+&kp TILDE  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &kp PRCNT                                         &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LSHFT  &kp GRAVE  &kp TILDE  &kp SQT   &kp DQT    &trans                                            &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp SQT
+&kp LSHFT  &kp Undo   &kp Cut    &kp Copy  &kp Paste  &trans     &sk RALT                    &kp K_APP  &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp RSHFT
+                                 &trans     &trans     &kp ESC    &trans    &trans    &trans  &trans  &trans     &trans     &trans
+            >;
+        };
+
+        adj_layer {
+            display-name = "Adjust";
+
+            // Core matches generic_3x6, with extra keys
+
+            bindings = <
+&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                         &kp C_VOL_UP  &kp C_BRI_UP  &none       &none       &none  &none
+&none        &bt BT_CLR    &out OUT_USB  &out OUT_BLE  &none              &none                                                &kp C_VOL_DN  &kp C_BRI_DN  &none       &none       &none  &none
+&bootloader  &bootloader   &sys_reset    &none         &ext_power EP_OFF  &ext_power EP_ON  &bt BT_CLR                  &none  &kp C_MUTE    &kp C_PP      &kp C_PREV  &kp C_NEXT  &none  &none
+                                        &none          &none              &none             &none       &none    &none  &none  &none  &none         &none
+            >;
+        };
+    };
+};
