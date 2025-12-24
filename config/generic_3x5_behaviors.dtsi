@@ -4,3 +4,83 @@
  * Shared behaviors and macros used by generic_3x5_layers.dtsi
  * Include this file in your board keymap before including the layers
  */
+
+/ {
+     combos {
+        compatible = "zmk,combos";
+
+        combo_unlock {
+            timeout-ms = <50>;
+            key-positions = <0 4>;
+            bindings = <&studio_unlock>;
+            layers = <0>;
+        };
+
+        // Layer toggle
+
+        combo_fnc {
+            timeout-ms = <200>;
+            key-positions = <30 33>;
+            bindings = <&mo 3>;
+        };
+
+        // Invoke macros
+        // Media keys
+
+        combo_vol_up {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            bindings = <&kp C_VOL_UP>;
+            key-positions = <5 6>;
+            layers = <0>;
+        };
+
+        // Navigation arrows
+        // Shortcuts
+
+        combo_volume_down {
+            bindings = <&kp C_VOL_DN>;
+            key-positions = <15 16>;
+        };
+
+        combo_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
+        };
+
+        combo_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
+        };
+
+        combo_ctrl_z {
+            bindings = <&kp LC(Z)>;
+            key-positions = <21 20>;
+        };
+
+        combo_ctrl_x {
+            bindings = <&kp LC(Z)>;
+            key-positions = <21 22>;
+        };
+
+        combo_ctrl_c {
+            bindings = <&kp LC(Z)>;
+            key-positions = <22 23>;
+        };
+
+        combo_ctrl_v {
+            bindings = <&kp LC(Z)>;
+            key-positions = <23 24>;
+        };
+
+        combo_ctrl_a {
+            bindings = <&kp LC(Z)>;
+            key-positions = <10 21>;
+        };
+    };
+};
