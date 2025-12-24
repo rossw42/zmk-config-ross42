@@ -57,7 +57,7 @@ try {
  *   #include "generic_3x5_layers.dtsi"
  */
 
-// Base Layer - QWERTY with hold-tap on Q (Esc) and P (Backspace)
+// Base Layer - QWERTY
 #define BASE_LAYER \
 $base3x5
 
