@@ -41,12 +41,12 @@ include:
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
-# - board: nice_nano/nrf52840
-#   shield: a_dux_left
-#   snippet: studio-rpc-usb-uart
-#   cmake-args: -DCONFIG_ZMK_STUDIO=y
-# - board: nice_nano/nrf52840
-#   shield: a_dux_right
+- board: nice_nano/nrf52840
+  shield: a_dux_left
+  snippet: studio-rpc-usb-uart
+  cmake-args: -DCONFIG_ZMK_STUDIO=y
+- board: nice_nano/nrf52840
+  shield: a_dux_right
 
 # # HyperGarlic - Using generic_3x5 (no Studio support in shield)
 # May not work wired
@@ -55,11 +55,11 @@ include:
 # - board: nice_nano/nrf52840
 #   shield: hypergarlic_right
 
-# # Kaz - Using generic_3x5 with custom shield (wired split) zmk studio 
-- board: nice_nano/nrf52840
-  shield: kaz_left
-- board: nice_nano/nrf52840
-  shield: kaz_right
+# # Kaz - Using generic_3x5 with custom shield (wired split)
+# - board: nice_nano/nrf52840
+#   shield: kaz_left
+# - board: nice_nano/nrf52840
+#   shield: kaz_right
 
 # # Cradio
 # # HyperGolic - Sold
