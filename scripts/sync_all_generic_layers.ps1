@@ -16,10 +16,17 @@ function Extract-Layer {
     )
     
     # Match the layer block and extract bindings
-    if ($Content -match "(?s)${LayerName}\s*\{[^}]*bindings\s*=\s*<([^>]+)>") {
+    # Use a more robust pattern that handles whitespace better
+    if ($Content -match "(?s)${LayerName}\s*\{[^}]*?bindings\s*=\s*<\s*([^>]+?)\s*>") {
         $bindings = $matches[1].Trim()
         # Split into lines, clean up, and add line continuation
         $lines = $bindings -split "`n" | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' }
+        
+        # Ensure we have at least one line
+        if ($lines.Count -eq 0) {
+            return ""
+        }
+        
         # Add backslash continuation to all lines except the last
         for ($i = 0; $i -lt $lines.Count; $i++) {
             if ($i -lt $lines.Count - 1) {

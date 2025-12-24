@@ -14,7 +14,8 @@ function Extract-Layer {
     )
     
     # Match the layer block and extract bindings
-    if ($Content -match "(?s)${LayerName}\s*\{[^}]*bindings\s*=\s*<([^>]+)>") {
+    # Use non-greedy matching and explicit whitespace handling
+    if ($Content -match "(?s)${LayerName}\s*\{[^}]*?bindings\s*=\s*<\s*([^>]+?)\s*>") {
         $bindings = $matches[1].Trim()
         # Split into lines and clean up
         $lines = $bindings -split "`n" | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' }
