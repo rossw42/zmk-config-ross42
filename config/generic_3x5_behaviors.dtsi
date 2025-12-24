@@ -1,7 +1,7 @@
 /*
  * Generic 3x5 Behaviors and Macros
  * 
- * Shared behaviors and macros used by generic_3x5_layers.dtsi
+ * Shared behaviors combos and macros used by generic_3x5_layers.dtsi
  * Include this file in your board keymap before including the layers
  */
 

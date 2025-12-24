@@ -81,7 +81,7 @@ $sym3x5
 $fnc3x5
 "@
     
-    Set-Content -Path $DTSI_3X5 -Value $output3x5 -NoNewline
+    Set-Content -Path $DTSI_3X5 -Value $output3x5
     Write-Host "   ✅ Created $DTSI_3X5" -ForegroundColor Green
     Write-Host ""
     
@@ -125,7 +125,7 @@ $sym3x6
 $fnc3x6
 "@
     
-    Set-Content -Path $DTSI_3X6 -Value $output3x6 -NoNewline
+    Set-Content -Path $DTSI_3X6 -Value $output3x6
     Write-Host "   ✅ Created $DTSI_3X6" -ForegroundColor Green
     
 } catch {
