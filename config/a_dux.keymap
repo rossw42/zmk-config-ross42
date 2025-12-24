@@ -8,6 +8,8 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 #include "generic_3x5_behaviors.dtsi"
 #include "generic_3x5_layers.dtsi"
 
