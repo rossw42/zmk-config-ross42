@@ -1,0 +1,178 @@
+layout: {zmk_keyboard: cradio}
+layers:
+  Base:
+  - {t: Q, h: ESC}
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - {t: P, h: BSPC}
+  - {t: A, h: LCTRL}
+  - {t: S, h: LALT}
+  - {t: D, h: LGUI}
+  - {t: F, h: LSHFT}
+  - G
+  - H
+  - {t: J, h: RSHFT}
+  - {t: K, h: RGUI}
+  - {t: L, h: RALT}
+  - {t: ;, h: RCTRL}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: TAB, h: Symbols}
+  - {t: RET, h: Ctl+LALT}
+  - {t: SPACE, h: RSHFT}
+  - {t: BSPC, h: Numbers}
+  Numbers:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - TAB
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - DEL
+  - {t: ▽, type: trans}
+  - F11
+  - F12
+  - {type: held}
+  Symbols:
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - '`'
+  - '~'
+  - ''''
+  - '"'
+  - {t: ▽, type: trans}
+  - '-'
+  - '='
+  - '['
+  - ']'
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - _
+  - +
+  - '{'
+  - '}'
+  - '|'
+  - {type: held}
+  - ESC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Function:
+  - '&sys_reset'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT BLE
+  - {t: BT, h: '0'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT USB
+  - {t: BT, h: '1'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT CLR
+  - {t: BT, h: '2'}
+  - MUTE
+  - PP
+  - PREV
+  - NEXT
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+combos:
+- p: [0, 1]
+  k: '&studio_unlock'
+  l: [Base]
+- p: [30, 33]
+  k: Function
+- p: [28, 29]
+  k: '&dir_up'
+  l: [Base]
+- p: [5, 6]
+  k: VOL UP
+  l: [Base]
+- p: [15, 16]
+  k: VOL DN
+  l: [Base]
+- p: [17, 27]
+  k: UARW
+  l: [Base]
+- p: [16, 26]
+  k: DARW
+  l: [Base]
+- p: [15, 25]
+  k: LARW
+  l: [Base]
+- p: [18, 28]
+  k: RARW
+  l: [Base]
+- p: [27, 28]
+  k: Sft+Alt+UARW
+  l: [Base]
+- p: [26, 27]
+  k: Sft+Alt+DARW
+  l: [Base]
+- p: [12, 13]
+  k: Sft+Gui+SPACE
+  l: [Base]
