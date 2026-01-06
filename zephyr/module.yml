@@ -6,12 +6,12 @@
 # build:
 #   settings:
 #     board_root: config\boards\shields\a_dux
-name: zmk-keyboard-hillside48
-build:
-  kconfig: boards/shields/hillside48/Kconfig.defconfig
-  settings:
-    board_root: .
-    dts_root: .
+# name: zmk-keyboard-hillside48
+# build:
+#   kconfig: boards/shields/hillside48/Kconfig.defconfig
+#   settings:
+#     board_root: .
+#     dts_root: .
 
 # name: zmk-keyboard-cradio
 # build:
