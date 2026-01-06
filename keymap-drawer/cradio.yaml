@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: cradio}
 layers:
   Base:
-  - {t: Q, h: ESC}
+  - '&esc_q ESC Q'
   - W
   - E
   - R
@@ -10,17 +10,17 @@ layers:
   - U
   - I
   - O
-  - {t: P, h: BSPC}
-  - {t: A, h: LCTRL}
-  - {t: S, h: LALT}
-  - {t: D, h: LGUI}
-  - {t: F, h: LSHFT}
+  - '&bspc_p BSPC P'
+  - '&lmt LCTRL A'
+  - '&lmt LALT S'
+  - '&lmt LGUI D'
+  - '&lst LSHFT F'
   - G
   - H
-  - {t: J, h: RSHFT}
-  - {t: K, h: RGUI}
-  - {t: L, h: RALT}
-  - {t: ;, h: RCTRL}
+  - '&rst RSHFT J'
+  - '&rmt RGUI K'
+  - '&rmt RALT L'
+  - '&rmt RCTRL SEMI'
   - Z
   - X
   - C
@@ -141,38 +141,29 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
 combos:
-- p: [0, 1]
+- p: [0, 4]
   k: '&studio_unlock'
   l: [Base]
 - p: [30, 33]
   k: Function
-- p: [28, 29]
-  k: '&dir_up'
-  l: [Base]
 - p: [5, 6]
   k: VOL UP
   l: [Base]
 - p: [15, 16]
   k: VOL DN
-  l: [Base]
-- p: [17, 27]
-  k: UARW
-  l: [Base]
-- p: [16, 26]
-  k: DARW
-  l: [Base]
-- p: [15, 25]
-  k: LARW
-  l: [Base]
-- p: [18, 28]
-  k: RARW
-  l: [Base]
-- p: [27, 28]
-  k: Sft+Alt+UARW
-  l: [Base]
-- p: [26, 27]
-  k: Sft+Alt+DARW
-  l: [Base]
-- p: [12, 13]
-  k: Sft+Gui+SPACE
-  l: [Base]
+- p: [8, 9]
+  k: BACKSPACE
+- p: [0, 1]
+  k: ESCAPE
+- p: [10, 11]
+  k: TAB
+- p: [21, 20]
+  k: Ctl+Z
+- p: [21, 22]
+  k: Ctl+Z
+- p: [22, 23]
+  k: Ctl+Z
+- p: [23, 24]
+  k: Ctl+Z
+- p: [10, 21]
+  k: Ctl+Z
