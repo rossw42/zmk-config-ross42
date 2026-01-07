@@ -29,7 +29,7 @@ include:
 #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 # - board: nice_nano/nrf52840
 #   shield: generic_3x6_right
-    
+
 # Hillside 48 - Using generic_3x6 + extras
 # - board: nice_nano_v2
 #   shield: hillside48_left
@@ -74,29 +74,28 @@ include:
 # # New board naming
 - board: nice_nano_v2
   shield: cradio_left
-  snippet: studio-rpc-usb-uart
-  cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # snippet: studio-rpc-usb-uart
+  # cmake-args: -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano_v2
   shield: cradio_right
+  # # Cradio36 - Using generic_3x6
+  # - board: nice_nano/nrf52840
+  #   shield: cradio36_left 
+  # - board: nice_nano/nrf52840
+  #   shield: cradio36_right
 
-# # Cradio36 - Using generic_3x6
-# - board: nice_nano/nrf52840
-#   shield: cradio36_left 
-# - board: nice_nano/nrf52840
-#   shield: cradio36_right
+  # # Cradios - Using generic_3x6 (no outer columns, no Studio support)
+  # - board: nice_nano/nrf52840
+  #   shield: cradios_left
+  # - board: nice_nano/nrf52840
+  #   shield: cradios_right
 
-# # Cradios - Using generic_3x6 (no outer columns, no Studio support)
-# - board: nice_nano/nrf52840
-#   shield: cradios_left
-# - board: nice_nano/nrf52840
-#   shield: cradios_right
-
-# HyperGolic - Bluetooth split keyboard 
-# Does not work Q/B switched
+  # HyperGolic - Bluetooth split keyboard 
+  # Does not work Q/B switched
   # - board: nice_nano/nrf52840
   #   shield: hypergolic_left
   # - board: nice_nano/nrf52840
   #   shield: hypergolic_right
 
-# - board: nrfmicro/nrf52840
-#   shield: settings_reset
+  # - board: nrfmicro/nrf52840
+  #   shield: settings_reset
