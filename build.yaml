@@ -97,5 +97,5 @@ include:
   # - board: nice_nano/nrf52840
   #   shield: hypergolic_right
 
-- board: nrfmicro/nrf52840
-  shield: settings_reset
+# - board: nrfmicro/nrf52840
+#   shield: settings_reset
