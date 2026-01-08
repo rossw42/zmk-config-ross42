@@ -14,6 +14,8 @@
 ---
 include:
 
+- board: nice_nano_v2
+  shield: settings_reset
 # Generic 3x5 - for keymap-editor testing
 # - board: nice_nano/nrf52840
 #   shield: generic_3x5_left
@@ -50,51 +52,49 @@ include:
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
-- board: nice_nano_v2
-  shield: a_dux_left
-- board: nice_nano_v2
-  shield: a_dux_right
-  # # HyperGarlic - Using generic_3x5 (no Studio support in shield)
-  # May not work wired
-  # - board: nice_nano/nrf52840
-  #   shield: hypergarlic_left
-  # - board: nice_nano/nrf52840
-  #   shield: hypergarlic_right
+# - board: nice_nano_v2
+#   shield: a_dux_left
+# - board: nice_nano_v2
+#   shield: a_dux_right
+# # HyperGarlic - Using generic_3x5 (no Studio support in shield)
+# May not work wired
+# - board: nice_nano/nrf52840
+#   shield: hypergarlic_left
+# - board: nice_nano/nrf52840
+#   shield: hypergarlic_right
 
-  # # Kaz - Using generic_3x5 with custom shield (wired split)
-  # - board: nice_nano/nrf52840
-  #   shield: kaz_left
-  # - board: nice_nano/nrf52840
-  #   shield: kaz_right
+# # Kaz - Using generic_3x5 with custom shield (wired split)
+# - board: nice_nano/nrf52840
+#   shield: kaz_left
+# - board: nice_nano/nrf52840
+#   shield: kaz_right
 
-  # # Cradio
-  # # HyperGol(ic - Sold
-  # # Sweep
-  # # New board naming
-  # - board: nice_nano_v2
-  #   shield: cradio_left
-  #   # snippet: studio-rpc-usb-uart
-  #   # cmake-args: -DCONFIG_ZMK_STUDIO=y
-  # - board: nice_nano_v2
-  #   shield: cradio_right
-  # # Cradio36 - Using generic_3x6
-  # - board: nice_nano/nrf52840
-  #   shield: cradio36_left 
-  # - board: nice_nano/nrf52840
-  #   shield: cradio36_right
+# # Cradio
+# # HyperGol(ic - Sold
+# # Sweep
+# # New board naming
+# - board: nice_nano_v2
+#   shield: cradio_left
+#   # snippet: studio-rpc-usb-uart
+#   # cmake-args: -DCONFIG_ZMK_STUDIO=y
+# - board: nice_nano_v2
+#   shield: cradio_right
+# # Cradio36 - Using generic_3x6
+# - board: nice_nano/nrf52840
+#   shield: cradio36_left 
+# - board: nice_nano/nrf52840
+#   shield: cradio36_right
 
-  # # Cradios - Using generic_3x6 (no outer columns, no Studio support)
-  # - board: nice_nano/nrf52840
-  #   shield: cradios_left
-  # - board: nice_nano/nrf52840
-  #   shield: cradios_right
+# # Cradios - Using generic_3x6 (no outer columns, no Studio support)
+# - board: nice_nano/nrf52840
+#   shield: cradios_left
+# - board: nice_nano/nrf52840
+#   shield: cradios_right
 
-  # HyperGolic - Bluetooth split keyboard 
-  # Does not work Q/B switched
-  # - board: nice_nano/nrf52840
-  #   shield: hypergolic_left
-  # - board: nice_nano/nrf52840
-  #   shield: hypergolic_right
+# HyperGolic - Bluetooth split keyboard 
+# Does not work Q/B switched
+# - board: nice_nano/nrf52840
+#   shield: hypergolic_left
+# - board: nice_nano/nrf52840
+#   shield: hypergolic_right
 
-  # - board: nrfmicro/nrf52840
-  #   shield: settings_reset
