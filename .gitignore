@@ -19,3 +19,5 @@ build/
 # Backup files
 *.backup
 *.bak
+
+.zmk/
