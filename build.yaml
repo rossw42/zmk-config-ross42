@@ -9,13 +9,12 @@ include:
 #   board: nice_nano
 
 # Hillside 48 - Using generic_3x6 + extras
-- board: nice_nano_v2
+- board: nice_nano/nrf52840
   shield: hillside48_left
   snippet: studio-rpc-usb-uart
   cmake-args: -DCONFIG_ZMK_STUDIO=y
-- board: nice_nano_v2
+- board: nice_nano/nrf52840
   shield: hillside48_right
-
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
