@@ -12,7 +12,6 @@ include:
 - board: nice_nano/nrf52840
   shield: hillside48_left
   snippet: studio-rpc-usb-uart
-  cmake-args: -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano/nrf52840
   shield: hillside48_right
 
