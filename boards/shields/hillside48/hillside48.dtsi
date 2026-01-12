@@ -8,7 +8,8 @@
 #include "hillside48-layouts.dtsi"
 
 &physical_layout0 {
-    transform = <&default_transform>;
+    kscan = <&kscan0>; // Label of the kscan node this layout uses
+    transform = <&default_transform>; // Label of the matrix transform this layout uses
 };
 
 / {
