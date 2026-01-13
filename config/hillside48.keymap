@@ -41,7 +41,10 @@
  */
 
             bindings = <
-&mo 2  &mt Q A  &kp LCTRL  &kp Z  &kp FSLH  &kp RIGHT_SHIFT  &kp ESC  &kp W  &kp E  &kp I  &kp O  &kp BSPC  &kp A  &kp S  &kp D  &kp K  &kp L  &kp SEMI  &kp X  &kp C  &kp R  &kp T  &kp Y  &kp U  &kp COMMA  &kp DOT  &kp F  &kp G  &kp H  &kp J  &kp V  &kp B  &kp N  &kp M  &kp LEFT_SHIFT  &kp DOT  &kp Q  &kp LEFT_CONTROL  &kp DOWN_ARROW  &kp UP_ARROW  &lt 1 RET  &lt 2 SPACE  &kp UP_ARROW  &kp DOWN_ARROW  &mo 1  &kp P  &kp LSHFT  &kp RET
+&kp GRAVE  &kp Q      &kp W      &kp E       &kp R       &kp T                                                &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSPC
+&kp TAB    &kp A      &kp S      &kp D       &kp F       &kp G                                                &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp RET
+&kp LSHFT  &kp Z      &kp X      &kp C       &kp V       &kp B       &kp CAPS                        &kp ESC  &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+           &kp LCTRL  &trans     &kp LGUI    &kp LALT    &kp SPACE   &mo 1                           &mo 2    &kp SPACE   &kp RALT    &kp RGUI    &trans      &kp APOS
             >;
         };
 
@@ -55,21 +58,27 @@
  */
 
             bindings = <
-&kp HOME  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp LS(AT)  &kp LS(POUND)  &kp LS(STAR)  &kp LS(LPAR)  &trans  &kp F1  &kp F2  &kp F3  &kp F8  &kp F9  &kp F10  &kp MINUS  &kp EQUAL  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp N7  &kp Undo  &kp F4  &kp F5  &kp F6  &kp F7  &sk RALT  &kp K_APP  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp LS(EXCL)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mo 3  &kp LS(RPAR)  &trans  &trans
+&kp HOME   &kp EXCL   &kp AT     &kp HASH    &kp DLLR    &kp PRCNT                                            &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &kp BSPC
+&kp END    &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &kp PG_UP                                            &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH    &kp RET
+&kp LSHFT  &kp Undo   &kp Cut    &kp Copy    &kp Paste   &kp PG_DN   &sk RALT                        &kp K_APP  &kp UNDER   &kp PLUS    &kp LBRC    &kp RBRC    &kp PIPE    &kp RSHFT
+           &trans     &trans     &trans      &trans      &trans      &trans                          &mo 3      &trans      &trans      &trans      &trans      &kp LCTRL
             >;
         };
 
         num_layer {
             /* NUM   
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | F11   |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |       | BSPC  |
+ * | F11   |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | BSPC  |
  * | F12   |  F1   |  F2   |  F3   |  F4   |  F5   |-----------------------------------|VOL UP | Shift | Ctrl  | Alt   | Gui   | ENTER |
  * | Shift |  F6   |  F7   |  F8   |  F9   |  F10  |  INS  |-------------------| MUTE  |VOL DN | Left  |  Up   | Down  | Right | DELETE|
  * ----------------|       |-------|       |       |       | ADJ_L |---|       |       |       |       |-------| CTRL  |----------------
  */
 
             bindings = <
-&kp F11  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N2  &kp N3  &kp N8  &kp N9  &trans  &kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp C_VOL_UP  &kp RSHFT  &kp N4  &kp N5  &kp N6  &kp N7  &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp INS  &kp C_MUTE  &kp C_VOL_DN  &kp LEFT  &kp UP  &kp DOWN  &kp N1  &kp DEL  &trans  &trans  &trans  &trans  &trans  &trans  &mo 3  &kp N0  &trans  &trans
+&kp F11    &kp N1     &kp N2     &kp N3      &kp N4      &kp N5                                               &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp BSPC
+&kp F12    &kp F1     &kp F2     &kp F3      &kp F4      &kp F5                                               &kp C_VOL_UP &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI    &kp RET
+&kp LSHFT  &kp F6     &kp F7     &kp F8      &kp F9      &kp F10     &kp INS                         &kp C_MUTE &kp C_VOL_DN &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &kp DEL
+           &trans     &trans     &trans      &trans      &mo 3       &trans                          &trans     &trans      &trans      &trans      &trans      &kp LCTRL
             >;
         };
 
@@ -83,7 +92,10 @@
  */
 
             bindings = <
-&bt BT_SEL 0  &to 0  &to 1  &to 2  &none  &none  &none  &trans  &none  &none  &none  &kp 3  &none  &trans  &trans  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none  &none  &none  &none  &none  &none  &bootloader  &none  &none  &out OUT_USB  &out OUT_BLE  &none  &bt BT_CLR  &none  &none  &none  &bt BT_SEL 1  &none  &none  &bt BT_SEL 2  &trans  &trans  &trans  &trans  &trans  &trans  &mo 3  &trans  &trans  &trans
+&none          &to 0          &to 1          &to 2          &none          &none                                            &none          &kp PSCRN       &none          &none          &none          &none
+&none          &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                   &none          &none          &none          &none          &none          &none
+&bootloader    &none          &none          &out OUT_USB    &out OUT_BLE    &none           &bt BT_CLR                  &none          &none          &none          &none          &none          &none          &kp RSHFT
+               &trans         &trans         &trans          &trans          &trans          &trans                      &trans         &trans         &trans         &trans         &trans         &kp LCTRL
             >;
         };
     };

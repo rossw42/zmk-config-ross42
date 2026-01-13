@@ -9,11 +9,11 @@ include:
 #   board: nice_nano
 
 # Hillside 48 - Using generic_3x6 + extras
-# - board: nice_nano/nrf52840
-#   shield: hillside48_left
-#   snippet: studio-rpc-usb-uart
-# - board: nice_nano/nrf52840
-#   shield: hillside48_right
+- board: nice_nano/nrf52840
+  shield: hillside48_left
+  snippet: studio-rpc-usb-uart
+- board: nice_nano/nrf52840
+  shield: hillside48_right
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
@@ -38,10 +38,10 @@ include:
 #   shield: hypergarlic_right
 
 # # Kaz - Using generic_3x5 with custom shield (wired split)
-- board: nice_nano/nrf52840
-  shield: kaz_left
-- board: nice_nano/nrf52840
-  shield: kaz_right
+# - board: nice_nano/nrf52840
+#   shield: kaz_left
+# - board: nice_nano/nrf52840
+#   shield: kaz_right
 
 # # Cradio
 # # HyperGol(ic - Sold
