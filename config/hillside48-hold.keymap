@@ -15,34 +15,18 @@
 
 // Include the shared layer definitions FIRST
 
-#include "generic_3x6_layers.dtsi"
+// #include "generic_3x6_layers.dtsi"
 
+#define QWERTY_L 0
+#define SYM_L    1
+#define NUM_L    2
+#define ADJ_L    3
 #define Undo   LC(Z)
 #define Cut    LC(X)
 #define Copy   LC(C)
 #define Paste  LC(V)
 
 / {
-    behaviors {
-        esc_q: escape_q {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        bspc_p: backspace_p {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -55,7 +39,7 @@
 
         combo_adj {
             timeout-ms = <200>;
-            key-positions = <36 41>;
+            key-positions = <38 40>;
             bindings = <&mo 3>;
         };
     };
@@ -65,8 +49,6 @@
 
         default_layer {
             display-name = "Base";
-
-            // Core matches generic_3x6, with extra keys added
 
             bindings = <
 &kp TAB    &esc_q ESC Q  &kp W  &kp E  &kp R  &kp T                                          &kp Y  &kp U     &kp I      &kp O    &bspc_p BSPC P  &kp BSPC
@@ -78,8 +60,6 @@
 
         num_layer {
             display-name = "Numbers";
-
-            // Core matches generic_3x6, with extra keys
 
             bindings = <
 &kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                          &kp N6    &kp N7     &kp N8     &kp N9     &kp N0   &kp DEL

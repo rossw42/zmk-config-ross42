@@ -1,13 +1,21 @@
 /*
- * Copyright (c) 2022 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
+ * Hillside48 Keymap - Using Generic 3x6 Layout + Extras
+ * 
+ * Core 3x6 + 3 thumbs syncs from generic system
+ * Extra keys: outer column + 4th thumb per side
+ * 
+ * Layout: 3x6 + 2 extra row keys + 4 thumbs = 48 keys
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+
+// Include the shared layer definitions FIRST
+
+// #include "generic_3x6_layers.dtsi"
 
 #define QWERTY_L 0
 #define SYM_L    1
@@ -22,9 +30,17 @@
     combos {
         compatible = "zmk,combos";
 
-        Layer3 {
-            bindings = <&mo 3>;
+        combo_unlock {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&studio_unlock>;
+            layers = <0>;
+        };
+
+        combo_adj {
+            timeout-ms = <200>;
             key-positions = <38 40>;
+            bindings = <&mo 3>;
         };
     };
 
@@ -32,70 +48,50 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            /* QWERTY
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
- * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   | ENTER |
- * | SHIFT |   Z   |   X   |   C   |   V   |   B   | CAPS  |-------------------|  ESC  |   N   |   M   |   ,   |   .   |   /   | SHIFT |
- * ----------------| CTRL  |-------|  GUI  |  ALT  | SPACE |  Sym  |---|  Num  | SPACE |  ALT  |  GUI  |-------|   '   |----------------
- */
+            display-name = "Base";
 
             bindings = <
-&kp GRAVE  &kp Q      &kp W      &kp E       &kp R       &kp T                                                &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSPC
-&kp TAB    &kp A      &kp S      &kp D       &kp F       &kp G                                                &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp RET
-&kp LSHFT  &kp Z      &kp X      &kp C       &kp V       &kp B       &kp CAPS                        &kp ESC  &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-           &kp LCTRL  &trans     &kp LGUI    &kp LALT    &kp SPACE   &mo 1                           &mo 2    &kp SPACE   &kp RALT    &kp RGUI    &trans      &kp APOS
-            >;
-        };
-
-        sym_layer {
-            /* SYM
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | HOME  |   !   |   @   |   #   |   $   |   %   |-----------------------------------|   ^   |   &   |   *   |   (   |   )   | BSPC  |
- * | END   |  GUI  |  Alt  | Ctrl  | Shift | Pg Up |-----------------------------------|   -   |   =   |   [   |   ]   |   \   | ENTER |
- * | Shift |  UnDo |  Cut  | Copy  | Paste | Pg Dn |OsAltGr|-------------------| MENU  |   _   |   +   |   {   |   }   |   |   | SHIFT |
- * ----------------|       |-------|       |       |       |       |---| ADJ_L |       |       |       |-------| CTRL  |----------------
- */
-
-            bindings = <
-&kp HOME   &kp EXCL   &kp AT     &kp HASH    &kp DLLR    &kp PRCNT                                            &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &kp BSPC
-&kp END    &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &kp PG_UP                                            &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH    &kp RET
-&kp LSHFT  &kp Undo   &kp Cut    &kp Copy    &kp Paste   &kp PG_DN   &sk RALT                        &kp K_APP  &kp UNDER   &kp PLUS    &kp LBRC    &kp RBRC    &kp PIPE    &kp RSHFT
-           &trans     &trans     &trans      &trans      &trans      &trans                          &mo 3      &trans      &trans      &trans      &trans      &kp LCTRL
+&kp TAB    &esc_q ESC Q  &kp W  &kp E  &kp R  &kp T                                          &kp Y  &kp U     &kp I      &kp O    &bspc_p BSPC P  &kp BSPC
+&kp LCTRL  &kp A         &kp S  &kp D  &kp F  &kp G                                          &kp H  &kp J     &kp K      &kp L    &kp SEMI        &kp SQT
+&kp LSHFT  &kp Z         &kp X  &kp C  &kp V  &kp B  &kp A                          &kp ESC  &kp N  &kp M     &kp COMMA  &kp DOT  &kp SLASH       &kp RSHFT
+                        &mo 3  &mo 1  &kp RET  &kp ESC  &trans    &trans  &mo 2  &kp SPACE  &mo 3  &kp LGUI
             >;
         };
 
         num_layer {
-            /* NUM   
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | F11   |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | BSPC  |
- * | F12   |  F1   |  F2   |  F3   |  F4   |  F5   |-----------------------------------|VOL UP | Shift | Ctrl  | Alt   | Gui   | ENTER |
- * | Shift |  F6   |  F7   |  F8   |  F9   |  F10  |  INS  |-------------------| MUTE  |VOL DN | Left  |  Up   | Down  | Right | DELETE|
- * ----------------|       |-------|       |       |       | ADJ_L |---|       |       |       |       |-------| CTRL  |----------------
- */
+            display-name = "Numbers";
 
             bindings = <
-&kp F11    &kp N1     &kp N2     &kp N3      &kp N4      &kp N5                                               &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp BSPC
-&kp F12    &kp F1     &kp F2     &kp F3      &kp F4      &kp F5                                               &kp C_VOL_UP &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI    &kp RET
-&kp LSHFT  &kp F6     &kp F7     &kp F8      &kp F9      &kp F10     &kp INS                         &kp C_MUTE &kp C_VOL_DN &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &kp DEL
-           &trans     &trans     &trans      &trans      &mo 3       &trans                          &trans     &trans      &trans      &trans      &trans      &kp LCTRL
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                          &kp N6    &kp N7     &kp N8     &kp N9     &kp N0   &kp DEL
+&kp F11  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                          &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp TAB  &kp TAB
+&kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp INS                    &kp C_MUTE  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL  &kp INS
+                        &trans  &trans  &trans   &trans   &trans    &trans  &trans  &trans      &trans    &trans
+            >;
+        };
+
+        sym_layer {
+            display-name = "Symbols";
+
+            // Core matches generic_3x6, with extra keys
+
+            bindings = <
+&kp TILDE  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &kp PRCNT                                         &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LSHFT  &kp GRAVE  &kp TILDE  &kp SQT   &kp DQT    &trans                                            &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp SQT
+&kp LSHFT  &kp Undo   &kp Cut    &kp Copy  &kp Paste  &trans     &sk RALT                    &kp K_APP  &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp RSHFT
+                                 &trans     &trans     &kp ESC    &trans    &trans    &trans  &trans  &trans     &trans     &trans
             >;
         };
 
         adj_layer {
-            /* ADJUST
- * -------------------------------------------------------------------------------------------------------------------------------------
- * |       | QWERTY| DVORAK| COLEMK|       |       |-----------------------------------|       |Prt Scr|       | EP_OFF| EP_ON |       |
- * |       | BT 0  | BT 1  | BT 2  | BT 3  | BT 4  |-----------------------------------|       |       |       |       |       |       |
- * | BOOTL |       |       |OUT_USB|OUT_BLE|       |BT CLR |-------------------|       |       |       |       |       |       | SHIFT |
- * ----------------|       |-------|       |       |       |       |---|       |       |       |       |-------| CTRL  |----------------
- */
+            display-name = "Adjust";
+
+            // Core matches generic_3x6, with extra keys
 
             bindings = <
-&none          &to 0          &to 1          &to 2          &none          &none                                            &none          &kp PSCRN       &none          &none          &none          &none
-&none          &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                   &none          &none          &none          &none          &none          &none
-&bootloader    &none          &none          &out OUT_USB    &out OUT_BLE    &none           &bt BT_CLR                  &none          &none          &none          &none          &none          &none          &kp RSHFT
-               &trans         &trans         &trans          &trans          &trans          &trans                      &trans         &trans         &trans         &trans         &trans         &kp LCTRL
+&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                         &kp C_VOL_UP  &kp C_BRI_UP  &none       &none       &none  &none
+&none        &bt BT_CLR    &out OUT_USB  &out OUT_BLE  &none              &none                                                &kp C_VOL_DN  &kp C_BRI_DN  &none       &none       &none  &none
+&bootloader  &bootloader   &sys_reset    &none         &ext_power EP_OFF  &ext_power EP_ON  &bt BT_CLR                  &none  &kp C_MUTE    &kp C_PP      &kp C_PREV  &kp C_NEXT  &none  &none
+                                        &none          &none              &none             &none       &none    &none  &none  &none  &none         &none
             >;
         };
     };
