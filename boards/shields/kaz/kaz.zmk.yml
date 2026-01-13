@@ -8,7 +8,6 @@ product_name: Kaz
 maintainer: Unknown
 features:
   - keys
-  - underglow
 split: true
 siblings:
   - kaz_left

@@ -1,8 +1,9 @@
 # Copyright (c) 2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config ZMK_SPLIT
-    default y
+
+
+
 
 if SHIELD_kaz_LEFT
 	config ZMK_SPLIT_ROLE_CENTRAL
@@ -14,7 +15,10 @@ endif
 
 if SHIELD_kaz_LEFT || SHIELD_kaz_RIGHT
 
-config ZMK_SPLIT
-    default y
+	config ZMK_SPLIT
+		default y
+
+	config ZMK_SPLIT_SERIAL
+		default y
 
 endif
