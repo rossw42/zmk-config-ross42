@@ -48,9 +48,9 @@ include:
 # # HyperGol(ic - Sold
 # # Sweep
 # # New board naming
-  - board: nice_nano_v2
+  - board: nice_nano/nrf52840
     shield: cradio_left
-  - board: nice_nano_v2
+  - board: nice_nano/nrf52840
     shield: cradio_right
 # # Cradio36 - Using generic_3x6
 # - board: nice_nano/nrf52840
