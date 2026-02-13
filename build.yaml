@@ -47,11 +47,11 @@ include:
 # # Cradio
 # # HyperGoliic - Sold
 # # Sweep
-# # New board naming
-  - board: nice_nano/nrf52840
-    shield: cradio_left
-  - board: nice_nano/nrf52840
-    shield: cradio_right
+# # # New board naming
+#   - board: nice_nano/nrf52840
+#     shield: cradio_left
+#   - board: nice_nano/nrf52840
+#     shield: cradio_right
 
 # HyperGolic - Bluetooth split keyboard 
 # Does not work Q/B switched
