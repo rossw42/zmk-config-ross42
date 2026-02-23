@@ -29,7 +29,6 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&studio_unlock>;
-            A
             layers = <0>;
         };
     };
@@ -80,6 +79,14 @@
 &trans       &trans  &trans  &trans  &bt BT_CLR_ALL  &bt BT_SEL 2  &trans                  &trans  &kp C_MUTE    &kp C_PP  &kp C_PREV  &kp C_NEXT  &trans  &trans
                      &trans          &trans          &trans        &trans  &trans  &trans  &trans  &trans        &trans                &trans
             >;
+        };
+
+        extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
         };
     };
 };
