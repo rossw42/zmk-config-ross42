@@ -9,11 +9,11 @@ include:
 #   board: nice_nano
 
 # Hillside 48 - Using generic_3x6 + extras
-# - board: nice_nano/nrf52840
-#   shield: hillside48_left
-#   snippet: studio-rpc-usb-uart
-# - board: nice_nano/nrf52840
-#   shield: hillside48_right
+- board: nice_nano/nrf52840
+  shield: hillside48_left
+  snippet: studio-rpc-usb-uart
+- board: nice_nano/nrf52840
+  shield: hillside48_right
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
@@ -30,14 +30,14 @@ include:
 #   shield: a_dux_left
 # - board: nice_nano_v2
 #   shield: a_dux_right
-# # HyperGarlic - Using generic_3x5 (no Studio support in shield)
+# # HyperGarlic - Using generic_3x5 (no Studio support in shield) Sold
 # May not work wired
-  - board: nice_nano/nrf52840
-    shield: hypergarlic_left
-  - board: nice_nano/nrf52840
-    shield: hypergarlic_right
+  # - board: nice_nano/nrf52840
+  #   shield: hypergarlic_left
+  # - board: nice_nano/nrf52840
+  #   shield: hypergarlic_right
 
-# # Kaz - Using generic_3x5 with custom shield (wired split)
+# # Kaz - Using generic_3x5 with custom shield (wired split) Sold
 # - board: nice_nano/nrf52840
 #   shield: kaz_left
 #   snippet: studio-rpc-usb-uart
@@ -48,12 +48,12 @@ include:
 # # HyperGoliic - Sold
 # # Sweep
 # # # New board naming
-#   - board: nice_nano/nrf52840
-#     shield: cradio_left
-#   - board: nice_nano/nrf52840
-#     shield: cradio_right
+- board: nice_nano/nrf52840
+  shield: cradio_left
+- board: nice_nano/nrf52840
+  shield: cradio_right
 
-# HyperGolic - Bluetooth split keyboard 
+# HyperGolic - Bluetooth split keyboard Sold
 # Does not work Q/B switched
 # - board: nice_nano/nrf52840
 #   shield: hypergolic_left
