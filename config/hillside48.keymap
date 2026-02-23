@@ -19,10 +19,7 @@
 #define SYM_L    1
 #define NUM_L    2
 #define ADJ_L    3
-#define Undo   LC(Z)
-#define Cut    LC(X)
-#define Copy   LC(C)
-#define Paste  LC(V)
+
 
 / {
     combos {
@@ -63,20 +60,19 @@
         sym_layer {
             display-name = "Symbols";
 
-            // Core matches generic_3x6, with extra keys
+
 
             bindings = <
-&kp TILDE  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &kp PRCNT                                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LSHFT  &kp GRAVE  &kp TILDE  &kp SQT   &kp DQT    &trans                                          &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp SQT
-&kp LSHFT  &kp Undo   &kp Cut    &kp Copy  &kp Paste  &trans     &sk RALT                  &kp K_APP  &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp RSHFT
-                      &trans               &trans     &kp ESC    &trans    &trans  &trans  &trans     &trans     &trans                &trans
+&kp TILDE  &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LSHFT  &kp GRAVE  &kp TILDE  &kp SQT   &kp DQT   &trans                                          &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp SQT
+&kp LSHFT  &trans     &trans     &trans    &trans    &trans     &sk RALT                  &kp K_APP  &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp RSHFT
+                      &trans               &trans    &kp ESC    &trans    &trans  &trans  &trans     &trans     &trans                &trans
             >;
         };
 
         adj_layer {
             display-name = "Adjust";
 
-            // Core matches generic_3x6, with extra keys
 
             bindings = <
 &sys_reset   &trans  &trans  &trans  &out OUT_BLE    &bt BT_SEL 0                                  &kp C_VOL_UP  &trans    &trans      &trans      &trans  &trans

@@ -14,26 +14,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    behaviors {
-        esc_q: escape_q {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            bindings = <&kp>, <&kp>;
-        };
-        
-        bspc_p: backspace_p {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 

@@ -11,11 +11,11 @@
 // #include <dt-bindings/zmk/outputs.h>
 // Include the shared behaviors and macros FIRST
 
-#include "generic_3x5_behaviors.dtsi"
+// #include "generic_3x5_behaviors.dtsi"
 
 // Include the shared layer definitions
 
-#include "generic_3x5_layers.dtsi"
+// #include "generic_3x5_layers.dtsi"
 
 / {
     combos {
