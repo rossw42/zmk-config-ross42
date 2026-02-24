@@ -11,7 +11,6 @@ include:
 # Hillside 48 - Using generic_3x6 + extras
 - board: nice_nano/nrf52840
   shield: hillside48_left
-  snippet: studio-rpc-ble
 - board: nice_nano/nrf52840
   shield: hillside48_right
 
