@@ -36,17 +36,17 @@
             key-positions = <10 11>;
         };
 
-        Ctrl-Z {
+        Ctrl_Z {
             bindings = <&kp LC(Z)>;
             key-positions = <20 21>;
         };
 
-        Ctrl-X {
+        Ctrl_X {
             bindings = <&kp LC(X)>;
             key-positions = <21 22>;
         };
 
-        Ctrl-V {
+        Ctrl_V {
             bindings = <&kp LC(V)>;
             key-positions = <22 23>;
         };
