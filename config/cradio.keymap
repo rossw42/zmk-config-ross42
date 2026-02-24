@@ -21,6 +21,13 @@
     combos {
         compatible = "zmk,combos";
 
+        combo_unlock {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&studio_unlock>;
+            layers = <0>;
+        };
+
         FunctionLayer {
             bindings = <&mo 3>;
             key-positions = <30 31>;
