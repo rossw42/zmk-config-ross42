@@ -1,7 +1,7 @@
 include:
 # Settings reset builds - flash these first if having pairing issues
-# - board: nice_nano/nrf52840
-#   shield: settings_reset
+- board: nice_nano/nrf52840
+  shield: settings_reset
 
 # - board: nice_nano@2.0.0
 #   shield: settings_reset
