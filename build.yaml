@@ -1,7 +1,7 @@
 include:
 # Settings reset builds - flash these first if having pairing issues
-- board: nice_nano/nrf52840
-  shield: settings_reset
+# - board: nice_nano/nrf52840
+#   shield: settings_reset
 
 # - board: nice_nano@2.0.0
 #   shield: settings_reset
@@ -13,10 +13,10 @@ include:
 #   board: nice_nano
 
 # Hillside 48 - Using generic_3x6 + extras
-- board: nice_nano/nrf52840
+- board: nice_nano//zmk
   shield: hillside48_left
   snippet: studio-rpc-usb-uart
-- board: nice_nano/nrf52840
+- board: nice_nano//zmk
   shield: hillside48_right
 
 # A_dux - Using generic_3x5 and zmk
