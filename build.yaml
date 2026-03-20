@@ -12,6 +12,8 @@ include:
 # - shield: cradio_right
 #   board: nice_nano
 
+- board: le_jlwffre
+  shield: settings_reset
 # Hillside 48 - Using generic_3x6 + extras
 - board: nice_nano//zmk
   shield: hillside48_left
