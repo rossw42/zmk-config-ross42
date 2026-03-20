@@ -9,8 +9,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-config-jlw
+    - name: zmk-jlw-keyboards
       remote: jlw
-      revision: main # This is the name of the branch you want to use.
+      revision: main
   self:
     path: config
