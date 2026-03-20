@@ -7,19 +7,16 @@ include:
 #   shield: settings_reset
 # - board:  nrfmicro@1.1.0/nrf52840/flipped
 #   shield: settings_reset
-# - shield: cradio_left
-#   board: nice_nano
-# - shield: cradio_right
-#   board: nice_nano
 
+# le_jlwffre (Le Chiffre) - onboard controller, no shield needed
 - board: le_jlwffre
-  shield: settings_reset
-# Hillside 48 - Using generic_3x6 + extras
-# - board: nice_nano//zmk
-#   shield: hillside48_left
-#   snippet: studio-rpc-usb-uart
-# - board: nice_nano//zmk
-#   shield: hillside48_right
+
+# Hillside 48
+- board: nice_nano/nrf52840
+  shield: hillside48_left
+  snippet: studio-rpc-usb-uart
+- board: nice_nano/nrf52840
+  shield: hillside48_right
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
