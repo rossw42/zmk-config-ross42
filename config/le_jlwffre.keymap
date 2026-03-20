@@ -9,36 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <220>;
-            require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        mt: mod_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <220>;
-            require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        as_ht: autoshift_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&shifted>, <&kp>;
-
-            flavor = "tap-preferred";
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -85,10 +55,10 @@
 
         num_layer {
             bindings = <
-&as_ht LSHFT GRAVE  &none            &none            &none            &none            &as_ht LSHFT BSLH  &as_ht LSHFT MINUS  &as_ht LSHFT EQUAL  &as_ht LSHFT LBKT  &as_ht LSHFT RBKT
-&as_ht LSHFT N1     &as_ht LSHFT N2  &as_ht LSHFT N3  &as_ht LSHFT N4  &as_ht LSHFT N5  &as_ht LSHFT N6    &as_ht LSHFT N7     &as_ht LSHFT N8     &as_ht LSHFT N9    &as_ht LSHFT N0
-&none               &none            &none            &none            &none            &none              &none               &trans              &trans             &as_ht LSHFT SEMI
-&trans              &trans           &trans           &trans
+&none   &none   &none   &none   &none  &none  &none  &none   &none   &none
+&none   &none   &none   &none   &none  &none  &none  &none   &none   &none
+&none   &none   &none   &none   &none  &none  &none  &trans  &trans  &none
+&trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -96,10 +66,10 @@
 
         fn_layer {
             bindings = <
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none   &none   &none   &none         &kp F11      &kp F12
-&ht LGUI F1  &ht LALT F2   &ht LCTRL F3  &kp F4        &kp F5  &kp F6  &kp F7  &ht RCTRL F8  &ht LALT F9  &ht RGUI F10
-&none        &none         &none         &none         &none   &none   &none   &none         &none        &none
-&trans       &trans        &trans        &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none   &none   &none   &none  &kp F11  &kp F12
+&none       &none         &none         &kp F4        &kp F5  &kp F6  &kp F7  &none  &none    &none
+&none       &none         &none         &none         &none   &none   &none   &none  &none    &none
+&trans      &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -118,10 +88,10 @@
 
         layer_4 {
             bindings = <
-&kp Q       &kp W            &kp F        &kp P        &kp B  &kp J  &kp L  &kp U               &kp Y             &as_ht LSHFT SQT
-&ht LGUI A  &ht LALT R       &ht LCTRL S  &kp T        &kp G  &kp M  &kp N  &ht RCTRL E         &ht LALT I        &ht RGUI O
-&kp Z       &kp X            &kp C        &kp D        &kp V  &kp K  &kp H  &as_ht LSHFT COMMA  &as_ht LSHFT DOT  &as_ht LSHFT FSLH
-&lt 3 TAB   &mt LSHIFT BSPC  &kp C_MUTE   &lt 1 SPACE
+&kp Q      &kp W  &kp F       &kp P        &kp B  &kp J  &kp L  &kp U  &kp Y  &none
+&none      &none  &none       &kp T        &kp G  &kp M  &kp N  &none  &none  &none
+&kp Z      &kp X  &kp C       &kp D        &kp V  &kp K  &kp H  &none  &none  &none
+&lt 3 TAB  &none  &kp C_MUTE  &lt 1 SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
