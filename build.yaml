@@ -15,11 +15,11 @@ include:
 - board: le_jlwffre
   shield: settings_reset
 # Hillside 48 - Using generic_3x6 + extras
-- board: nice_nano//zmk
-  shield: hillside48_left
-  snippet: studio-rpc-usb-uart
-- board: nice_nano//zmk
-  shield: hillside48_right
+# - board: nice_nano//zmk
+#   shield: hillside48_left
+#   snippet: studio-rpc-usb-uart
+# - board: nice_nano//zmk
+#   shield: hillside48_right
 
 # A_dux - Using generic_3x5 and zmk
 # Om - uses this also
