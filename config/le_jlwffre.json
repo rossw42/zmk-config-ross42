@@ -1,0 +1,53 @@
+{
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        { "label":  "Q", "row": 0, "col":  0, "x": 0,    "y": 0.25 },
+        { "label":  "W", "row": 0, "col":  1, "x": 1,    "y": 0.10 },
+        { "label":  "F", "row": 0, "col":  2, "x": 2,    "y": 0    },
+        { "label":  "P", "row": 0, "col":  3, "x": 3,    "y": 0.10 },
+        { "label":  "B", "row": 0, "col":  4, "x": 4,    "y": 0.20 },
+        { "label":  "J", "row": 0, "col":  5, "x": 6,    "y": 0.20 },
+        { "label":  "L", "row": 0, "col":  6, "x": 7,    "y": 0.10 },
+        { "label":  "U", "row": 0, "col":  7, "x": 8,    "y": 0    },
+        { "label":  "Y", "row": 0, "col":  8, "x": 9,    "y": 0.10 },
+        { "label": "'",  "row": 0, "col":  9, "x": 10,   "y": 0.25 },
+
+        { "label":  "A", "row": 1, "col":  0, "x": 0,    "y": 1.25 },
+        { "label":  "R", "row": 1, "col":  1, "x": 1,    "y": 1.10 },
+        { "label":  "S", "row": 1, "col":  2, "x": 2,    "y": 1    },
+        { "label":  "T", "row": 1, "col":  3, "x": 3,    "y": 1.10 },
+        { "label":  "G", "row": 1, "col":  4, "x": 4,    "y": 1.20 },
+        { "label":  "M", "row": 1, "col":  5, "x": 6,    "y": 1.20 },
+        { "label":  "N", "row": 1, "col":  6, "x": 7,    "y": 1.10 },
+        { "label":  "E", "row": 1, "col":  7, "x": 8,    "y": 1    },
+        { "label":  "I", "row": 1, "col":  8, "x": 9,    "y": 1.10 },
+        { "label":  "O", "row": 1, "col":  9, "x": 10,   "y": 1.25 },
+
+        { "label":  "Z", "row": 2, "col":  0, "x": 0,    "y": 2.25 },
+        { "label":  "X", "row": 2, "col":  1, "x": 1,    "y": 2.10 },
+        { "label":  "C", "row": 2, "col":  2, "x": 2,    "y": 2    },
+        { "label":  "D", "row": 2, "col":  3, "x": 3,    "y": 2.10 },
+        { "label":  "V", "row": 2, "col":  4, "x": 4,    "y": 2.20 },
+        { "label":  "K", "row": 2, "col":  5, "x": 6,    "y": 2.20 },
+        { "label":  "H", "row": 2, "col":  6, "x": 7,    "y": 2.10 },
+        { "label":  ",", "row": 2, "col":  7, "x": 8,    "y": 2    },
+        { "label":  ".", "row": 2, "col":  8, "x": 9,    "y": 2.10 },
+        { "label":  "/", "row": 2, "col":  9, "x": 10,   "y": 2.25 },
+
+        { "label": "TAB",  "row": 3, "col":  0, "x": 3,    "y": 3.20 },
+        { "label": "BSPC", "row": 3, "col":  1, "x": 4,    "y": 3.40 },
+        { "label": "SPC",  "row": 3, "col":  2, "x": 6,    "y": 3.40 },
+        { "label": "RET",  "row": 3, "col":  3, "x": 7,    "y": 3.20 }
+      ]
+    }
+  },
+  "sensors": [
+    {
+      "name": "encoder",
+      "identifier": "encoder",
+      "compatible": "alps,ec11",
+      "label": "ENCODER"
+    }
+  ]
+}
