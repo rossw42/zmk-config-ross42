@@ -2,6 +2,15 @@ include:
 # Settings reset builds - flash these first if having pairing issues
 # - board: nice_nano/nrf52840
 #   shield: settings_reset
+  - board: nice_nano//zmk
+    shield: bug54_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano//zmk
+    shield: bug54_right
+  - board: nice_nano//zmk
+    shield: settings_reset
+
 
 # - board: nice_nano@2.0.0
 #   shield: settings_reset
@@ -9,7 +18,7 @@ include:
 #   shield: settings_reset
 
 # le_jlwffre (Le Chiffre) - onboard controller, no shield needed
-- board: le_jlwffre
+# - board: le_jlwffre
 
 # Hillside 48
 # - board: nice_nano/nrf52840

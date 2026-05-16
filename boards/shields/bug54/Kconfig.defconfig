@@ -1,0 +1,16 @@
+if SHIELD_BUG54_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Bug54"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_BUG54_LEFT || SHIELD_BUG54_RIGHT
+    
+config ZMK_SPLIT
+    default y
+
+endif
