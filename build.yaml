@@ -14,8 +14,8 @@ include:
 
 # - board: nice_nano@2.0.0
 #   shield: settings_reset
-# - board:  nrfmicro@1.1.0/nrf52840/flipped
-#   shield: settings_reset
+- board:  nrfmicro@1.1/nrf52840/flipped_zmk
+  shield: settings_reset
 
 # le_jlwffre (Le Chiffre) - onboard controller, no shield needed
 # - board: le_jlwffre
@@ -60,11 +60,11 @@ include:
 # # HyperGoliic - Sold
 # # Sweep
 # # # New board naming
-- board: nrfmicro@1.1/nrf52840/zmk
+- board: nrfmicro@1.1/nrf52840/flipped_zmk
   shield: cradio_left
   snippet: studio-rpc-usb-uart
   cmake-args: -DCONFIG_ZMK_STUDIO=y
-- board: nrfmicro@1.1/nrf52840/zmk
+- board: nrfmicro@1.1/nrf52840/flipped_zmk
   shield: cradio_right
 
 # HyperGolic - Bluetooth split keyboard Sold
