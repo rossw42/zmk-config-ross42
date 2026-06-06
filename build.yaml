@@ -60,11 +60,11 @@ include:
 # # HyperGoliic - Sold
 # # Sweep
 # # # New board naming
-- board: nice_nano/nrf52840
+- board: nrfmicro@1.1/nrf52840/zmk
   shield: cradio_left
   snippet: studio-rpc-usb-uart
   cmake-args: -DCONFIG_ZMK_STUDIO=y
-- board: nice_nano/nrf52840
+- board: nrfmicro@1.1/nrf52840/zmk
   shield: cradio_right
 
 # HyperGolic - Bluetooth split keyboard Sold
