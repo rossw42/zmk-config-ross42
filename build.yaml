@@ -46,7 +46,7 @@ include:
 # May not work wired
   # - board: nice_nano/nrf52840
   #   shield: hypergarlic_left
-  # - board: nice_nano/nrf52840
+  # -  board: nice_nano/nrf52840
   #   shield: hypergarlic_right
 
 # # Kaz - Using generic_3x5 with custom shield (wired split) Sold
@@ -63,7 +63,7 @@ include:
 - board: nrfmicro@1.1/nrf52840/zmk
   shield: cradio_left
   snippet: studio-rpc-usb-uart
-  cmake-args: -DCONFIG_ZMK_STUDIO=y
+  cmake-args: -DCONFIG_ZMK_STUDIO=y -CONFIG_ZMK_STUDIO_LOCKING=n
 - board: nrfmicro@1.1/nrf52840/zmk
   shield: cradio_right
 
