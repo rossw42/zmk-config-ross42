@@ -2,10 +2,10 @@ include:
 # Settings reset builds - flash these first if having pairing issues
 # - board: nice_nano/nrf52840
 #   shield: settings_reset
-- board: nrfmicro@1.1/nrf52840/flipped_zmk
-  shield: bug54_left
-  snippet: studio-rpc-usb-uart
-  cmake-args: -DCONFIG_ZMK_STUDIO=y
+# - board: nrfmicro@1.1/nrf52840/flipped_zmk
+#   shield: bug54_left
+#   snippet: studio-rpc-usb-uart
+#   cmake-args: -DCONFIG_ZMK_STUDIO=y
 # - board: nice_nano//zmk
   #   shield: bug54_right
   # - board: nice_nano//zmk
