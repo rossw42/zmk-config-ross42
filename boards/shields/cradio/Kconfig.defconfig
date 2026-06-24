@@ -4,7 +4,7 @@
 if SHIELD_CRADIO_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Cradio"
+    default "Sweep"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
