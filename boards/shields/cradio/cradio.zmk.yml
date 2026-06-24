@@ -1,0 +1,13 @@
+file_format: "1"
+id: cradio
+name: Cradio
+type: shield
+url: https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/cradio
+requires:
+- pro_micro
+features:
+- keys
+- studio
+siblings:
+- cradio_left
+- cradio_right

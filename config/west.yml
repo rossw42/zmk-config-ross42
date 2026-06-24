@@ -2,15 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: jlw # You can name this whatever you like; just make sure the "remote" below matches.
-      url-base: https://github.com/josh-l-wang
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-jlw-keyboards
-      remote: jlw
-      revision: main
   self:
     path: config
