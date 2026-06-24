@@ -52,11 +52,6 @@
             key-positions = <17 18>;
             bindings = <&kp RGUI>;
         };
-
-        unlock {
-            bindings = <&studio_unlock>;
-            key-positions = <4 3>;
-        };
     };
 
     keymap {
