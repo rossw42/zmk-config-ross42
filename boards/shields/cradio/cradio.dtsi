@@ -5,11 +5,11 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <layouts/cuddlykeyboards/ferris.dtsi>
+// #include <layouts/cuddlykeyboards/ferris.dtsi>
 
-&cuddlykeyboards_ferris_layout {
-    transform = <&default_transform>;
-};
+// &cuddlykeyboards_ferris_layout {
+//     transform = <&default_transform>;
+// };
 
 / {
     chosen {
