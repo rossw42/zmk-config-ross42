@@ -60,12 +60,12 @@ include:
 # # HyperGoliic - Sold
 # # Sweep
 # # # New board naming
-- board: nice_nano/nrf52840/zmk
-  shield: cradio_dongle
-  cmake-args: -DCONFIG_ZMK_STUDIO=y
+# - board: nice_nano/nrf52840/zmk
+#   shield: cradio_dongle
+#   cmake-args: -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano/nrf52840/zmk
   shield: cradio_left
-  cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano/nrf52840/zmk
   shield: cradio_right
 
