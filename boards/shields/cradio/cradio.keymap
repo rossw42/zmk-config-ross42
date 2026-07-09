@@ -95,5 +95,15 @@
                           &trans  &trans     &trans  &trans
             >;
         };
+
+        // Empty layers reserved for use in ZMK Studio.
+        // Ignored in regular builds; available in Studio-enabled builds.
+        extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
+        };
     };
 };

@@ -62,12 +62,18 @@ include:
 # # # New board naming
 # - board: nice_nano/nrf52840/zmk
 #   shield: cradio_dongle
+#   snippet: studio-rpc-usb-uart
 #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano/nrf52840/zmk
   shield: cradio_left
+  snippet: studio-rpc-usb-uart
   cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano/nrf52840/zmk
   shield: cradio_right
+# Settings reset - flash to BOTH halves (then re-flash normal firmware)
+# when the halves stop pairing with each other
+- board: nice_nano/nrf52840/zmk
+  shield: settings_reset
 
 # HyperGolic - Bluetooth split keyboard Sold
 # Does not work Q/B switched
