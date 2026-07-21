@@ -1,6 +1,0 @@
-if SHIELD_LE_COLIBRI
-
-config ZMK_KEYBOARD_NAME
-    default "Le Colibri"
-
-endif
