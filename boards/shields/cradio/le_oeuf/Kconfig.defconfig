@@ -1,9 +1,0 @@
-if SHIELD_LE_OEUF
-
-config ZMK_KEYBOARD_NAME
-    default "Le Oeuf"
-
-config SPI
-    default y
-
-endif
