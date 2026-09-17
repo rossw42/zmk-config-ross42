@@ -83,6 +83,12 @@ include:
 # - board: nice_nano/nrf52840
 #   shield: hypergolic_right
 
-- board: xiao_rp2040//zmk
-  shield: le_oeuf
-  snippet: studio-rpc-usb-uart
+# - board: xiao_rp2040//zmk
+#   shield: le_oeuf
+#   snippet: studio-rpc-usb-uart
+
+  - board: nice_nano//zmk
+    shield: solanum_left
+    snippet: studio-rpc-usb-uart
+  - board: nice_nano//zmk
+    shield: solanum_right
