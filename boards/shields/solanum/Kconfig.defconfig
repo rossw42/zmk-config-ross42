@@ -13,4 +13,13 @@ if SHIELD_SOLANUM_LEFT || SHIELD_SOLANUM_RIGHT
 config ZMK_SPLIT
     default y
 
+# Wired split on nRF52 uses the async (DMA) UART API. The nice!nano board
+# defconfig enables interrupt-driven mode on uart0; if both end up set the
+# nrfx UARTE driver is built for interrupt mode, uart_callback_set() fails
+# and the wired-split SYS_INIT aborts -- the keyboard never enumerates.
+# Required per zmk.dev/docs/hardware-integration/pinctrl#uart-nrf52840.
+config UART_0_INTERRUPT_DRIVEN
+    depends on !ZMK_SPLIT_WIRED_UART_MODE_ASYNC
+
 endif
+
