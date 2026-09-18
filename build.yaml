@@ -89,7 +89,8 @@ include:
 
   - board: nice_nano//zmk
     shield: solanum_left
-    snippet: studio-rpc-usb-uart
+    # TEMPORARY: WARN-level log over a 2nd CDC-ACM port to diagnose wired split TX
+    snippet: studio-rpc-usb-uart zmk-usb-logging
   - board: nice_nano//zmk
     shield: solanum_right
     # TEMPORARY: debug log over USB on the peripheral (plug the RIGHT half into
