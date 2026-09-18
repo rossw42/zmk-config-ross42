@@ -2,34 +2,36 @@
  * Copyright (c) 2024 Travis Mick
  * SPDX-License-Identifier: MIT
  *
- * nice!nano v2 board overlay for the Solanum wired half-duplex split.
+ * nice!nano board overlay for the Solanum wired half-duplex split.
  *
- * The nice!nano's stock pro_micro_serial (uart0) pinctrl uses
- * gpio0.6 (TX) / gpio0.8 (RX) -- the default nRF52840 UART pin
- * assignment for the pro_micro interconnect. That does NOT match the
- * Solanum PCB, whose TRRS "SERIAL" net is hard-wired to pro_micro pin
- * D3, which is gpio0.20 on the nice!nano (per arduino_pro_micro_pins.dtsi).
+ * WHICH PIN IS THE TRRS "SERIAL" NET ON?
+ *   The Solanum QMK port declares `"serial": {"pin": "D3"}`. That is the
+ *   AVR *port* pin PD3, which on a Pro Micro is the pad silkscreened
+ *   **D1 / TXO** -- not the pad silkscreened "D3". In ZMK's pro_micro
+ *   connector numbering that pad is <&pro_micro 1>, and per the nice!nano
+ *   arduino_pro_micro_pins.dtsi it is gpio0.6 -- which is also the
+ *   nice!nano's stock uart0 TX pin. Pro Micro pad D3 (<&pro_micro 3>,
+ *   gpio0.17) and pad D4 (<&pro_micro 4>, gpio0.20) both carry key
+ *   switches and stay in kscan.
+ *
+ *   A previous revision of this overlay put the UART on gpio0.20 (pad D4)
+ *   and pulled pad D3 out of kscan; both were wrong, so no serial link
+ *   was ever established.
  *
  * Half-duplex mode uses a single shared wire, so TX and RX are both
- * pointed at the same pin (gpio0.20) here.
+ * pointed at the same pin (gpio0.6) here.
  *
  * DRIVE MODE: with the nRF default drive (S0S1, push-pull) BOTH halves
  * actively drive the shared SERIAL wire high while idle, and the moment
  * one side pulls it low for a start bit the two controllers fight each
  * other -- the result is corrupted bytes that fail ZMK's CRC check and are
- * silently discarded, i.e. no key events ever cross the link. Using
- * NRF_DRIVE_S0D1 (standard drive for '0', DISCONNECT for '1') turns the
- * TX output into an open-drain driver: a '1' is provided by the pull-up
- * only, so a '0' from either side always wins and the line is never
- * driven high against a low. This is the standard single-wire (1-Wire /
- * LIN style) half-duplex arrangement. The internal bias-pull-up supplies
- * the idle-high level; an external ~4.7k-10k pull-up to VCC on the SERIAL
- * net is recommended if the internal pull proves too weak at 115200 baud.
- *
- * gpio0.20 has no key switch attached on this PCB (confirmed against
- * the schematic: the "SERIAL" net only ever touches the TRRS jack and
- * this MCU pin), so no kscan/keymap position is lost by dedicating it
- * to UART -- it is simply removed from solanum.dtsi's kscan list.
+ * silently discarded. Using NRF_DRIVE_S0D1 (standard drive for '0',
+ * DISCONNECT for '1') turns the TX output into an open-drain driver: a
+ * '1' is provided only by the pull-up, so a '0' from either side always
+ * wins and the line is never driven high against a low. The internal
+ * bias-pull-up supplies the idle-high level; add an external 4.7k-10k
+ * pull-up to VCC on the SERIAL net if the internal pull proves too weak
+ * at 115200 baud.
  */
 
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
@@ -37,8 +39,8 @@
 &pinctrl {
 	uart0_default: uart0_default {
 		group1 {
-			psels = <NRF_PSEL(UART_TX, 0, 20)>,
-				<NRF_PSEL(UART_RX, 0, 20)>;
+			psels = <NRF_PSEL(UART_TX, 0, 6)>,
+				<NRF_PSEL(UART_RX, 0, 6)>;
 			bias-pull-up;
 			nordic,drive-mode = <NRF_DRIVE_S0D1>;
 		};
@@ -46,8 +48,8 @@
 
 	uart0_sleep: uart0_sleep {
 		group1 {
-			psels = <NRF_PSEL(UART_TX, 0, 20)>,
-				<NRF_PSEL(UART_RX, 0, 20)>;
+			psels = <NRF_PSEL(UART_TX, 0, 6)>,
+				<NRF_PSEL(UART_RX, 0, 6)>;
 			bias-pull-up;
 			nordic,drive-mode = <NRF_DRIVE_S0D1>;
 			low-power-enable;

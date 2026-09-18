@@ -15,22 +15,28 @@
 
 	default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
-		columns = <32>;
+		columns = <34>;
 		rows = <1>;
 		/*
-		 * pro_micro D3 (gpio0 20 on nice!nano) is dedicated on the
-		 * Solanum PCB to the TRRS SERIAL net -- it has no switch
-		 * wired to it (confirmed against the schematic: net 23
-		 * "SERIAL" only ever touches the TRRS jack and this MCU pin).
-		 * It is used here for the ZMK wired half-duplex split UART,
-		 * so it is simply absent from the kscan list below; no key
-		 * position or column is lost since none ever existed there.
+		 * Full 34-key matrix, identical to upstream eggsworks/zmk-config.
+		 *
+		 * PIN NAMING TRAP: the Solanum QMK port lists the serial pin as
+		 * AVR port pin "D3". AVR PD3 is the Pro Micro pad labelled **D1**
+		 * (TXO), NOT the pad labelled D3. In pro_micro connector indices
+		 * that is <&pro_micro 1>, which on the nice!nano is gpio0.6.
+		 * Pro Micro pad D3 (<&pro_micro 3>) is AVR PD0 and carries a key
+		 * switch in the QMK direct matrix, so it MUST stay in kscan.
+		 *
+		 * The earlier attempt removed <&pro_micro 3> from kscan and moved
+		 * the UART onto gpio0.20 (= pad D4/A6, AVR PD4, also a key). That
+		 * dropped one key per half AND put the UART on a switch net, and
+		 * left the real serial pad (gpio0.6) unused -- hence no link.
 		 */
 		map = <
-			         RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)        RC(0,20) RC(0,19) RC(0,18) RC(0,17) RC(0,16)
-	        RC(0,5)  RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)                           RC(0,25) RC(0,24) RC(0,23) RC(0,22) RC(0,21)
-			         RC(0,10) RC(0,11) RC(0,12) RC(0,13) RC(0,14)       RC(0,30) RC(0,29) RC(0,28) RC(0,27) RC(0,26)
-			                                             RC(0,15)       RC(0,31)
+			         RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)        RC(0,21) RC(0,20) RC(0,19) RC(0,18) RC(0,17)
+	        RC(0,5)  RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10)       RC(0,27) RC(0,26) RC(0,25) RC(0,24) RC(0,23) RC(0,22)
+			         RC(0,11) RC(0,12) RC(0,13) RC(0,14) RC(0,15)       RC(0,32) RC(0,31) RC(0,30) RC(0,29) RC(0,28)
+			                                             RC(0,16)       RC(0,33)
 		>;
 	};
 
@@ -48,7 +54,7 @@
             <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
             <&pro_micro  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
             <&pro_micro  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-            /* pro_micro 3 (D3 / gpio0 20) removed -- claimed by uart0 for wired split */
+            <&pro_micro  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
             <&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
             <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
             <&pro_micro  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
