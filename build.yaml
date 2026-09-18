@@ -89,6 +89,8 @@ include:
 
   - board: nice_nano//zmk
     shield: solanum_left
-    snippet: studio-rpc-usb-uart
+    # TEMPORARY: zmk-usb-logging adds a second CDC-ACM port streaming ZMK debug
+    # logs (for diagnosing the wired split link). Remove when done.
+    snippet: studio-rpc-usb-uart zmk-usb-logging
   - board: nice_nano//zmk
     shield: solanum_right
