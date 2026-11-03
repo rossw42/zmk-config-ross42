@@ -19,18 +19,9 @@
 		rows = <1>;
 		/*
 		 * Full 34-key matrix, identical to upstream eggsworks/zmk-config.
-		 *
-		 * PIN NAMING TRAP: the Solanum QMK port lists the serial pin as
-		 * AVR port pin "D3". AVR PD3 is the Pro Micro pad labelled **D1**
-		 * (TXO), NOT the pad labelled D3. In pro_micro connector indices
-		 * that is <&pro_micro 1>, which on the nice!nano is gpio0.6.
-		 * Pro Micro pad D3 (<&pro_micro 3>) is AVR PD0 and carries a key
-		 * switch in the QMK direct matrix, so it MUST stay in kscan.
-		 *
-		 * The earlier attempt removed <&pro_micro 3> from kscan and moved
-		 * the UART onto gpio0.20 (= pad D4/A6, AVR PD4, also a key). That
-		 * dropped one key per half AND put the UART on a switch net, and
-		 * left the real serial pad (gpio0.6) unused -- hence no link.
+		 * The TRRS SERIAL net (Pro Micro pad D1/TXO, gpio0.6 -- the QMK
+		 * port's "D3" is the AVR port-pin name, a naming trap) carries no
+		 * switch and is unused in this BLE split build.
 		 */
 		map = <
 			         RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)        RC(0,21) RC(0,20) RC(0,19) RC(0,18) RC(0,17)
@@ -62,12 +53,6 @@
             <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
             <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 		;
-	};
-
-	wired_split {
-		compatible = "zmk,wired-split";
-		device = <&pro_micro_serial>;
-		half-duplex;
 	};
 
 };
