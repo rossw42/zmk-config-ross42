@@ -1,7 +1,10 @@
 #!/usr/bin/env python
-"""Capture ZMK USB debug log from a board built with the zmk-usb-logging snippet.
+r"""Capture ZMK USB debug log from a board built with the zmk-usb-logging snippet.
 
 Windows' .NET SerialPort/FileStream choke on Zephyr CDC-ACM ports; pyserial works.
+Zephyr's CDC-ACM console only transmits once the host asserts DTR (and, with
+CONFIG_UART_LINE_CTRL, it may also wait for a baud-rate SET_LINE_CODING), so we
+explicitly toggle DTR/RTS after opening and send a newline to nudge the shell.
 
 Usage: python capture_zmk_log.py [--port COM13] [--seconds 30] [--out S:\TEMP\zmk_log.txt]
 """
@@ -18,7 +21,6 @@ def find_log_port():
     if not zmk:
         sys.exit("No ZMK (VID 1D50) serial ports found")
     print("ZMK ports:", ", ".join(f"{p.device} ({p.hwid})" for p in zmk))
-    # Studio RPC is interface MI_00; the logging CDC-ACM is the later interface.
     zmk.sort(key=lambda p: int(p.device[3:]))
     return zmk[-1].device
 
@@ -33,13 +35,12 @@ def main():
     port = a.port or find_log_port()
     print(f"Opening {port} for {a.seconds}s -> {a.out}", flush=True)
     chunks = []
-    # Open without reconfiguring line settings first: Zephyr CDC-ACM can be slow to
-    # answer the SET_LINE_CODING control request and pyserial then throws
-    # "semaphore timeout". Retry a few times.
     s = serial.Serial()
     s.port = port
     s.baudrate = 115200
     s.timeout = 0.2
+    s.dtr = True   # set BEFORE open so DTR is asserted as part of open()
+    s.rts = True
     for attempt in range(5):
         try:
             s.open()
@@ -50,10 +51,16 @@ def main():
     else:
         sys.exit("could not open port")
     with s:
+        # Belt and braces: pulse DTR so a "DTR rising edge" gated console wakes up.
         try:
-            s.dtr = True  # Zephyr CDC console gates output on DTR
-        except Exception:
-            pass
+            s.dtr = False
+            time.sleep(0.1)
+            s.dtr = True
+            s.rts = True
+            s.write(b"\r\n")
+        except Exception as e:
+            print("  line-ctrl toggle failed:", e)
+        print(f"  DTR={s.dtr} RTS={s.rts} CTS={s.cts} DSR={s.dsr} CD={s.cd}", flush=True)
         deadline = time.time() + a.seconds
         while time.time() < deadline:
             data = s.read(4096)
